@@ -10,17 +10,14 @@ import MobileMenu from "./MobileMenu";
 
 const navLinks = [
   {
-    title: "About",
+    title: "Hakkımda",
     path: "#about",
   },
   {
-    title: "Projects",
+    title: "Projelerim",
     path: "#project",
   },
-  {
-    title: "Contact",
-    path: "#contact",
-  },
+  
 ];
 
 const Navbar = () => {

@@ -23,16 +23,19 @@ const config = {
         roboto:["Roboto","sans-serif"],
         pacifico:["Pacifico","sans-serif"],
       },
-      colors:{
-        mycolor:{
-          100:"#5FB0CE",
-          200:"#1F466F",
-          300:"#364149",
-          400:"#0D0D11",
-          500:"#3E4548",
-          600:"#323B44",
+  
+      colors: {
+        mycolor: {
+          100: "#A8E6CF", // Açık yeşil
+          200: "#56C596", // Orta yeşil
+          300: "#379683", // Daha koyu yeşil
+          400: "#0D0D11", // Değişmeden kaldı
+          500: "#1B4D3E", // Koyu yeşil
+          600: "#0A3D2A", // Daha koyu yeşil
         }
       },
+      
+      
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

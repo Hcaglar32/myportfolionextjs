@@ -3,6 +3,7 @@ import Archive from "@/components/Arcihive/Archive";
 import Hero from "@/components/Hero/Hero";
 import Navbar from "@/components/Navbar/Navbar";
 import Project from "@/components/Projects/Project";
+import Footer from "@/components/footer/Footer";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
@@ -16,6 +17,7 @@ export default function Home() {
           <Archive/>
           <About/>
           <Project/>
+          <Footer/>
         </div>
       </main>
     </>

@@ -2,62 +2,27 @@
 
 import { useInView } from "framer-motion";
 import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
 import ProjectTag from "./ProjectTag";
+import { motion } from "framer-motion";
+import ProjectCard from "./ProjectCard";
 
 const projectsData = [
   {
     id: 1,
-    title: "Coffee Website",
-    description: "Project 1 description",
-    image: "/projects/1.png",
+    title: "Cags Movie",
+    description: "Kullanıcıların Üye girişi yapabildikleri bir film bilgilendirme ve listeleme sitesi. Kullanılan teknolojiler: React.js , tailwind.css",
+    image: "/movie.jpg",
     tag: ["All", "Frontend"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/Hcaglar32/movie-project",
     previewUrl: "/",
   },
   {
     id: 2,
-    title: "Camp Website",
-    description: "Project 2 description",
-    image: "/projects/2.png",
+    title: "Hava Durumu",
+    description: "Kullanıcıların dünyadaki bütün şehirleri aratarak o şehrin hava durumunu öğrenebileceği bir uygulama. Kullanılan teknoloji:vite.js",
+    image: "/weatherapp.jpg",
     tag: ["All", "Frontend"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 3,
-    title: "Next Auth V5",
-    description: "Project 3 description",
-    image: "/projects/3.png",
-    tag: ["All", "FullStack"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 4,
-    title: "Next js 14",
-    description: "Project 4 description",
-    image: "/projects/4.png",
-    tag: ["All", "Frontend"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 5,
-    title: "Ecommerce Nextjs",
-    description: "Authentication and CRUD operations",
-    image: "/projects/5.png",
-    tag: ["All", "FullStack"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 6,
-    title: "Twitch Clone",
-    description: "Project 5 description",
-    image: "/projects/8.png",
-    tag: ["All", "FullStack"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/Hcaglar32/WeatherApp",
     previewUrl: "/",
   },
 ];
@@ -76,29 +41,57 @@ const Project = () => {
     project.tag.includes(tag)
   );
 
-  const cardVariants = {
-    inital: { y: 50, opacity: 0 },
+  const cardvariants = {
+    initial: { y: 50, opacity: 0 },
     animate: { y: 0, opacity: 1 },
   };
+
   return (
-    <section id="projects">
-      <h2 className="text-center text-4xl text-white font-semibold mt-4 mb-8 lg:mt-8 lg:mb-12">
-        My Projects
+    <section id="project" className="mb-12">
+      <h2
+        className="text-center text-4xl text-white font-semibold
+        mt-4 mb-8 lg:mt-8 lg:mb-12"
+      >
+        Projelerim
       </h2>
-      <div className="text-white flex flex-row justify-center items-center gap-5 py-6">
+
+      <div
+        className="text-white flex flex-row justify-center items-center
+        gap-5 py-6"
+      >
         <ProjectTag
-        name="All"
-        onclick={handleTagChange}
-        isSelected={tag==="All"}
+          name="All"
+          onClick={handleTagChange}
+          isSelected={tag === "All"}
         />
+
+    
+
         <ProjectTag
-        name="Frontend"
-        onclick={handleTagChange}
-        isSelected={tag==="Frontend"}
+          name="Frontend"
+          onClick={handleTagChange}
+          isSelected={tag === "Frontend"}
         />
       </div>
-      <ul ref={ref} className="gird md:grid-cols-3 gap-5 md:gap-10">
-
+      <ul ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10">
+        {filtredProject.map((project, index) => (
+          <motion.li
+            key={index}
+            variants={cardvariants}
+            initial="initial"
+            animate={isInview ? "animate" : "inital"}
+            transition={{ duration: 0.3, delay: index * 0.4 }}
+          >
+            <ProjectCard
+              description={project.description}
+              gitUrl={project.gitUrl}
+              image={project.image}
+              previewUrl={project.previewUrl}
+              title={project.title}
+              key={project.id}
+            />
+          </motion.li>
+        ))}
       </ul>
     </section>
   );

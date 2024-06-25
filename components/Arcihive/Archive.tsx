@@ -11,25 +11,20 @@ const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
 
 const Listachieve = [
   {
-    metric: "Projects",
-    value: "100",
+    metric: "Proje",
+    value: "10",
     postfix: "+",
     icon: FiActivity,
   },
+ 
   {
-    prefix: "~",
-    metric: "Users",
-    value: "100,000",
-    icon: FiUsers,
-  },
-  {
-    metric: "Awards",
-    value: "7",
+    metric: "Bilinen dil ve framework",
+    value: "9",
     icon: FiAward,
   },
   {
-    metric: "Years",
-    value: "5",
+    metric: "Yıllık Tecrübe",
+    value: "1",
     icon: FiClock,
   },
 ];
@@ -61,7 +56,7 @@ const Archive = () => {
                   <span className="ml-2">{arc.postfix}</span>
                 </h2>
               </div>
-              <p className="text-white text-base ">{arc.metric}</p>
+              <p className="text-white text-base max-w-28 mt-2 text-center">{arc.metric}</p>
             </div>
           );
         })}
