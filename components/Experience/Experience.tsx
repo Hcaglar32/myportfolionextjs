@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const experiences = [
   {
-    title: "Web Developer",
+    title: "Web Developerr",
     company: "405Found",
     location: "Türkiye",
     period: "2025",
